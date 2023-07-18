@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator BMI</h1>
+        <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga memandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI</p>
+        <form name="bmi" id="bmi" method="">
+            <div>
+                <legend>Jenis Kelamin</legend>
+                <div>
+                    <label>
+                        <input type="radio" name="gender" value="laki">Laki-Laki
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="radio" name="gender" value="perempuan">Perempuan
+                    </label>
+                </div>
+            </div>
+            <div>
+                <legend>Berat Badan (kg)</legend>
+                <span class="material-symbols-outlined">scale</span><input type="number" id="berat" name="berat">
+            </div>
+            <div>
+                <legend>Usia (tahun)</legend>
+                <span class="material-symbols-outlined">timelapse</span><input type="number" id="umur" name="umur">
+            </div>
+            <div>
+                <legend>Tinggi Badan (cm)</legend>
+                <span class="material-symbols-outlined">height</span><input type="number" id="tinggi" name="tinggi">
+            </div>
+            <button type="button" form="bmi" value="submit" onclick="hitungBMI()">Hitung BMI</button>
+            <button type="reset" form="bmi" value="reset">Reset</button>
+            <div id="error"></div>
+        </form>
+    </div>
+    <div id="result"></div>
+</body>
+</html>
