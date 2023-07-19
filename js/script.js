@@ -1,18 +1,3 @@
-function hitungBMI() {
-    let form = document.getElementById("bmi");
-    let gender = form.elements['gender'].value;
-    let berat = form.elements['berat'].value;
-    let usia = form.elements['usia'].value;
-    let tinggi = form.elements['tinggi'].value;
-    //validasi inputan
-    if (usia == 0 || berat == 0 || tinggi == 0 || gender == "") {
-        document.getElementById("hasil").textContent="Mohon perbaiki inputan, nilai tidak boleh 0 dan semua harus diisi";
-    }else {
-    //hasil
-        document.getElementById("hasil").textContent=berat/(tinggi/100)**2
-    }
-}
-
 function calculateBMI() {
     let form = document.getElementById("bmi");
     let gender = form.elements["gender"].value;
@@ -27,11 +12,13 @@ function calculateBMI() {
         4: "Anda kegemukan(Obesitas)"
     }
     let bmiCategory;
+    //validasi inputan kalkulator
     if (weight <= 0 || age <= 0 || height <= 0 || gender == "") {
         document.getElementById("error").textContent="Inputan salah mohon diperbaiki kembali";
         document.getElementById("error").style.backgroundColor = "#FF9B9B";
     } else {
         var genderID;
+        // memunculkan kategori BMI sesuai nilainya
         if (bmi < 18.5) {
             bmiCategory = category[1];
         } else if (bmi < 25) {
@@ -41,16 +28,12 @@ function calculateBMI() {
         } else {
             bmiCategory = category[4];
         }
-        if(gender == "male") {
-            genderID= "Laki-Laki"
-        } else {
-            genderID= "Perempuan"
-        }
+        //update dom buat hasil BMI
         document.getElementById("calculator").style.display = "none";
         document.getElementById("result").style.display = "block";
         document.getElementById("error").textContent="";
         document.getElementById("bmiValue").textContent = bmi.toFixed(2);
-        document.getElementById("genderValue").textContent = genderID
+        document.getElementById("genderValue").textContent = gender;
         document.getElementById("weightValue").textContent = weight;
         document.getElementById("ageValue").textContent = age;
         document.getElementById("heightValue").textContent = height;
@@ -58,6 +41,7 @@ function calculateBMI() {
     }
 }
 
+//buat pindah view ke kalkulator
 function startCalculator() {
     document.getElementById("greeter").style.display = "none";
     document.getElementById("calculator").style.display = "block";
