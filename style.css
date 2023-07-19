@@ -1,0 +1,150 @@
+body {
+    background-color: #F7FFE5;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: grey;
+}
+.container {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.center {
+    width: 250px;
+    text-align: center;
+    align-content: center;
+}
+
+#calculator {
+    display: none;
+    text-align: left;
+}
+
+#calculator.appear {
+    display: block;
+}
+
+#result {
+    display: none;
+    background-color: #E1ECC8;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-radius: 8px;
+}
+
+#greeter p {
+    text-align: justify;
+}
+
+#validation {
+    font-size: x-small;
+    list-style-type: none;
+    list
+}
+
+#error {
+    font-size: smaller;
+    color: #F7FFE5;
+    text-align: center;
+}
+
+
+@keyframes greeter {
+    from {
+        color: #F7FFE5;
+    }
+    to {color: grey;}
+  }
+  
+#greeter, #header {
+    animation-name: greeter;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes greeterButton {
+    from {
+        background-color: #F7FFE5;
+        color: #F7FFE5;
+    }
+    to {
+        background-color: #A0C49D;
+        color: white;
+    }
+  }
+  
+  /* The element to apply the animation to */
+#greeterButton {
+    animation-name: greeterButton;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    
+}
+
+
+table, td {
+    text-align: left;
+    border: 5px solid #E1ECC8;
+    border-collapse: collapse;
+    background-color: #F7FFE5;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+  background-color: #A0C49D;
+  border-style: none;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+fieldset {
+    border: #F7FFE5 solid 2px;
+    background-color: #E1ECC8;
+    border-radius: 8px;
+    margin: 10px;
+}
+legend {
+    color: #F7FFE5;
+    background-color: #A0C49D;
+    border-radius: 5px;
+}
+
+input {
+    border: none;
+    text-align: right;
+    background-color: #F7FFE5;
+    color: grey;
+}
+
+th {
+    text-align: center;
+}
