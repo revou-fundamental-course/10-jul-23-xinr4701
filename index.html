@@ -1,47 +1,89 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kalkulator BMI</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
     <div class="container">
-        <h1>Kalkulator BMI</h1>
-        <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga memandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI</p>
-        <form name="bmi" id="bmi" method="">
-            <div>
-                <legend>Jenis Kelamin</legend>
-                <div>
-                    <label>
-                        <input type="radio" name="gender" value="laki">Laki-Laki
-                    </label>
+        <div class="container-row">
+            <div class="center"><h1 id="header">Kalkulator BMI</h1></div>
+        </div>
+        <div class="container-row" id="main">
+            <div class="center" id="app">
+                <div id="greeter">
+                    <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki  bentuk tubuh yang menunjang penampilan, berat badan  ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI</p>
+                    <button type="submit" onclick="startCalculator()" id="greeterButton">Mulai!</button>
                 </div>
-                <div>
-                    <label>
-                        <input type="radio" name="gender" value="perempuan">Perempuan
-                    </label>
+                <div id="calculator">
+                    <form action="" name="bmi" id="bmi">
+                        <fieldset>
+                            <legend>Jenis Kelamin</legend>
+                            <input type="radio" name="gender" id="male" value="male">
+                            <label for="male">Laki-Laki</label><br/>
+                            <input type="radio" name="gender" id="female" value="female">
+                            <label for="female">Perempuan</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend for="weight">Berat badan (kg)</legend>
+                            <input type="number" name="weight" id="weight">
+                        </fieldset>
+                        <fieldset>
+                            <legend for="age">Usia (tahun)</legend>
+                            <input type="number" name="age" id="age">
+                        </fieldset>
+                        <fieldset>
+                            <legend for="height">Tinggi Badan (m)</legend>
+                            <input type="number" name="height" id="height">
+                        </fieldset>
+                        <fieldset>
+                            <button type="button" onclick="calculateBMI()">Hitung BMI</button>
+                            <button type="reset">Reset</button>
+                        </fieldset>
+                        <div id="validation">
+                            <ul>
+                                <li>Semua harus diisi</li>
+                                <li>Berat, umur dan tinggi harap diisi dengan angka</li>
+                                <li>Nilai harus lebih dari 0</li>
+                            </ul>
+                        </div>
+                        <div id="error"></div>
+                    </form>
+                </div>
+                <div id="result">
+                    <h2>Nilai BMI anda di</h2>
+                    <h1 id="bmiValue"></h1>
+                    <p id="bmiCategory"></p>
+                    <table>
+                        <tr>
+                            <th colspan="2">Inputan Anda</th>
+                        </tr>
+                        <tr>
+                            <td>Jenis Kelamin</td>
+                            <td id="genderValue"></td>
+                        </tr>
+                        <tr>
+                            <td>Berat Badan (kg)</td>
+                            <td id="weightValue"></td>
+                        </tr>
+                        <tr>
+                            <td>Umur (tahun)</td>
+                            <td id="ageValue"></td>
+                        </tr>
+                        <tr>
+                            <td>Tinggi Badan (cm)</td>
+                            <td id="heightValue"></td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <button type="submit" onclick="startCalculator()">Kembali ke kalkulator</button>
+                    <br/>
                 </div>
             </div>
-            <div>
-                <legend>Berat Badan (kg)</legend>
-                <span class="material-symbols-outlined">scale</span><input type="number" id="berat" name="berat">
-            </div>
-            <div>
-                <legend>Usia (tahun)</legend>
-                <span class="material-symbols-outlined">timelapse</span><input type="number" id="umur" name="umur">
-            </div>
-            <div>
-                <legend>Tinggi Badan (cm)</legend>
-                <span class="material-symbols-outlined">height</span><input type="number" id="tinggi" name="tinggi">
-            </div>
-            <button type="button" form="bmi" value="submit" onclick="hitungBMI()">Hitung BMI</button>
-            <button type="reset" form="bmi" value="reset">Reset</button>
-            <div id="error"></div>
-        </form>
+        </div>
     </div>
-    <div id="result"></div>
+    <script src="script.js"></script>
 </body>
 </html>
